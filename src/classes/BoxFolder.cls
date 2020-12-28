@@ -590,7 +590,8 @@ public class BoxFolder extends BoxItem {
                     children.add(new BoxFolder.Info(entryObject));
                 }
             }
-            System.assertEquals(totalCount, children.size());
+            System.assertEquals((totalCount - offset) < limitCount : (totalCount - offset) ? limitCount, children.size()
+                                , children.size());
         }
         return children;
     }
